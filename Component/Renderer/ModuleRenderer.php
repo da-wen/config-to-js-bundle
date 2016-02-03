@@ -8,7 +8,7 @@
 
 namespace Dawen\Bundle\ConfigToJsBundle\Component\Renderer;
 
-use Dawen\ConfigToJsBundle\Component\RendererInterface;
+use Dawen\Bundle\ConfigToJsBundle\Component\RendererInterface;
 
 class ModuleRenderer implements RendererInterface
 {
