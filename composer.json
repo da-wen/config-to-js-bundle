@@ -1,0 +1,25 @@
+{
+  "name": "dawen/config-to-js-bundle",
+  "type": "symfony-bundle",
+  "description": "Provides a command to dump defined config to js file",
+  "keywords": ["config", "javascript", "dump", "bundle", "symfony"],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Daniel Wendlandt",
+      "email": "dan.wendlandt@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.5.0",
+    "symfony/framework-bundle": "~2.3|~3.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "~4.8"
+  },
+  "autoload": {
+    "psr-0": { "Dawen\\Bundle\\ConfigToJsBundle": "" }
+  },
+  "target-dir": "Dawen/Bundle/ConfigToJsBundle",
+  "minimum-stability": "stable"
+}
