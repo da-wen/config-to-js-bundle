@@ -7,14 +7,14 @@
     <services>
         <service id="config_to_js.filesystem" class="Symfony\Component\Filesystem\Filesystem" public="false"/>
 
-        <service id="config_to_js.dumper" class="Dawen\ConfigToJsBundle\Component\ConfigDumper">
+        <service id="config_to_js.dumper" class="Dawen\Bundle\ConfigToJsBundle\Component\ConfigDumper">
 
             <call method="registerRenderer">
                 <argument type="service" id="config_to_js.renderer.module"/>
             </call>
         </service>
 
-        <service id="config_to_js.renderer.module" class="Dawen\ConfigToJsBundle\Component\Renderer\ModuleRenderer"/>
+        <service id="config_to_js.renderer.module" class="Dawen\Bundle\ConfigToJsBundle\Component\Renderer\ModuleRenderer"/>
 
     </services>
 </container>
