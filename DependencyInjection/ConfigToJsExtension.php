@@ -1,6 +1,6 @@
 <?php
 
-namespace Dawen\ConfigToJsBundle\DependencyInjection;
+namespace Dawen\Bundle\ConfigToJsBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;

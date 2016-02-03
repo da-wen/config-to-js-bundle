@@ -6,7 +6,7 @@
  * Time: 23:28
  */
 
-namespace Dawen\ConfigToJsBundle\Command;
+namespace Dawen\Bundle\ConfigToJsBundle\Command;
 
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Input\InputInterface;

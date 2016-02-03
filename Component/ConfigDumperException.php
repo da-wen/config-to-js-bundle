@@ -6,7 +6,7 @@
  * Time: 22:44
  */
 
-namespace Dawen\ConfigToJsBundle\Component;
+namespace Dawen\Bundle\ConfigToJsBundle\Component;
 
 class ConfigDumperException extends \Exception
 {

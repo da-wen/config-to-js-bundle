@@ -6,7 +6,7 @@
  * Time: 23:14
  */
 
-namespace Dawen\ConfigToJsBundle\Component\Renderer;
+namespace Dawen\Bundle\ConfigToJsBundle\Component\Renderer;
 
 use Dawen\ConfigToJsBundle\Component\RendererInterface;
 

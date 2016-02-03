@@ -1,6 +1,6 @@
 <?php
 
-namespace Dawen\ConfigToJsBundle;
+namespace Dawen\Bundle\ConfigToJsBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 

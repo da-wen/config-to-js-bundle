@@ -1,6 +1,6 @@
 <?php
 
-namespace Dawen\ConfigToJsBundle\DependencyInjection;
+namespace Dawen\Bundle\ConfigToJsBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;

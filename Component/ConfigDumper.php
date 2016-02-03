@@ -6,7 +6,7 @@
  * Time: 19:28
  */
 
-namespace Dawen\ConfigToJsBundle\Component;
+namespace Dawen\Bundle\ConfigToJsBundle\Component;
 
 use Symfony\Component\Filesystem\Filesystem;
 
