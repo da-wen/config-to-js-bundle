@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="config_to_js.filesystem" class="Symfony\Component\Filesystem\Filesystem" public="false"/>
+
+        <service id="config_to_js.dumper" class="Dawen\ConfigToJsBundle\Component\ConfigDumper">
+
+            <call method="registerRenderer">
+                <argument type="service" id="config_to_js.renderer.module"/>
+            </call>
+        </service>
+
+        <service id="config_to_js.renderer.module" class="Dawen\ConfigToJsBundle\Component\Renderer\ModuleRenderer"/>
+
+    </services>
+</container>
