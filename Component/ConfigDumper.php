@@ -10,7 +10,7 @@ namespace Dawen\Bundle\ConfigToJsBundle\Component;
 
 use Symfony\Component\Filesystem\Filesystem;
 
-final class ConfigDumper implements ConfigDumperInterface
+class ConfigDumper implements ConfigDumperInterface
 {
     /**
      * @var string
@@ -93,7 +93,7 @@ final class ConfigDumper implements ConfigDumperInterface
      */
     public function getType()
     {
-        return $this->getType();
+        return $this->type;
     }
 
     /**
