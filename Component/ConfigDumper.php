@@ -58,13 +58,14 @@ class ConfigDumper implements ConfigDumperInterface
      */
     public function dump()
     {
+        if (empty($this->config)) {
+            throw new ConfigDumperException('It does not make sense to dump an empty config');
+        }
+
         if (!isset($this->renderers[$this->type])) {
             throw new ConfigDumperException('A renderer with the name "' . $this->type . '" is not registered');
         }
 
-        if (empty($this->config)) {
-            throw new ConfigDumperException('It does not make sense to dump an empty config');
-        }
 
         /** @var RendererInterface $renderer */
         $renderer = $this->renderers[$this->type];

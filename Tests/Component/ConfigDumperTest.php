@@ -130,4 +130,35 @@ class ConfigDumperTest extends \PHPUnit_Framework_TestCase
         $this->dumper->registerRenderer($this->renderer);
         $this->dumper->registerRenderer($this->renderer);
     }
+
+    public function testDumpNotExistingRendererException()
+    {
+        $message = 'A renderer with the name "' . self::TYPE . '" is not registered';
+        $this->setExpectedException(ConfigDumperException::class, $message);
+
+        $this->dumper->dump();
+    }
+
+    public function testDumpEmptyConfigException()
+    {
+        $this->renderer->expects($this->never())->method('getName')->willReturn(self::TYPE);
+
+        $message = 'It does not make sense to dump an empty config';
+        $this->setExpectedException(ConfigDumperException::class, $message);
+
+        $this->dumper->setConfig([]);
+        $this->dumper->dump();
+    }
+
+    public function testDump()
+    {
+        $renderedString = 'my fancy output';
+
+        $this->renderer->expects($this->once())->method('getName')->willReturn(self::TYPE);
+        $this->renderer->expects($this->once())->method('render')->with($this->config)->willReturn($renderedString);
+        $this->filesystem->expects($this->once())->method('dumpFile')->with(self::OUTPUT_PATH, $renderedString);
+
+        $this->dumper->registerRenderer($this->renderer);
+        $this->dumper->dump();
+    }
 }
