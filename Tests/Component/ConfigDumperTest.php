@@ -9,6 +9,7 @@
 namespace Dawen\Bundle\ConfigToJsBundle\Tests\Component;
 
 use Dawen\Bundle\ConfigToJsBundle\Component\ConfigDumper;
+use Dawen\Bundle\ConfigToJsBundle\Component\ConfigDumperException;
 use Dawen\Bundle\ConfigToJsBundle\Component\ConfigDumperInterface;
 
 class ConfigDumperTest extends \PHPUnit_Framework_TestCase
@@ -44,9 +45,9 @@ class ConfigDumperTest extends \PHPUnit_Framework_TestCase
             ->disableOriginalConstructor()
             ->getMock();
 
-        $this->renderer = $this->getMockBuilder('Symfony\Component\Filesystem\Filesystem')
+        $this->renderer = $this->getMockBuilder('Dawen\Bundle\ConfigToJsBundle\Component\RendererInterface')
             ->disableOriginalConstructor()
-            ->getMock('Dawen\Bundle\ConfigToJsBundle\Component\RendererInterface');
+            ->getMock();
 
         $this->dumper = new ConfigDumper(self::TYPE, self::OUTPUT_PATH, $this->config, $this->filesystem);
     }
@@ -117,5 +118,16 @@ class ConfigDumperTest extends \PHPUnit_Framework_TestCase
 
         $this->dumper->setFilesystem($filesystem);
         $this->assertSame($filesystem, $this->dumper->getFilesystem());
+    }
+
+    public function testRegisterRendererException()
+    {
+        $this->renderer->expects($this->exactly(2))->method('getName')->willReturn(self::TYPE);
+
+        $message = 'A renderer with the name "' . self::TYPE . '" is already registered';
+        $this->setExpectedException(ConfigDumperException::class, $message);
+
+        $this->dumper->registerRenderer($this->renderer);
+        $this->dumper->registerRenderer($this->renderer);
     }
 }

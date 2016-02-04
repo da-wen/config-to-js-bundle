@@ -1,4 +1,5 @@
 # config-to-js-bundle
+[![Build Status](https://travis-ci.org/da-wen/config-to-js-bundle.svg?branch=master)](https://travis-ci.org/da-wen/config-to-js-bundle)
 
 Provides a command to dump defined config to js file.
 
